@@ -1,4 +1,4 @@
-# patient-app
+# Simple Patient Info App using Electron, Redux toolkit
 
 An Electron application with React and TypeScript
 
@@ -8,10 +8,18 @@ An Electron application with React and TypeScript
 
 ## Project Setup
 
+### Create
+
+```bash
+$ npm create @quick-start/electron@latest patient-info -- --template react-ts
+```
+
 ### Install
 
 ```bash
 $ npm install
+OR 
+$ npm install -D electron vite-plugin-electron vite-plugin-electron-renderer electron-builder
 ```
 
 ### Development

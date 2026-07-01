@@ -12,10 +12,16 @@ const patientSlice = createSlice({
       state.patientList.push(action.payload)
     },
     removePatient(state, action) {
-      state.patientList = state.patientList.filter(patient => patient.id !== action.payload.id)
+      state.patientList = state.patientList.filter(patient => patient.id !== action.payload)
+    },
+    editPatient(state, action) {
+      const patientIndex = state.patientList.findIndex( patient => patient.id === action.payload.id);
+      if (patientIndex !== -1) {
+        state.patientList[patientIndex] = action.payload;
+      }
     }
   }
 })
 
-export const { addPatient, removePatient } = patientSlice.actions;
+export const { addPatient, removePatient, editPatient } = patientSlice.actions;
 export default patientSlice.reducer
